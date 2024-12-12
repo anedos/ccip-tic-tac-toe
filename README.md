@@ -152,6 +152,13 @@ Router addresses are listed below:
 ### 4. Player 1 starts a game
 You can start a new game through a TicTacToe contract on any chain. The player who starts a game is player 1. Player 1 needs to send a transaction to create a session, allowing the other player on the other chain to join that session and make a move.
 
+---
+**NOTE**
+
+Before starting a new game, you need to send a small amount of native tokens to the source blockchain in order to cover fees. For example, if the sender is Ethereum Sepolia, you need to send to the `<contract address of TicTacToe>` some Sepolia ETH (SETH), if the sender is Avalanche Fuji, you need to send some Fuji AVAX.
+
+---
+
 Start a game with the command below:
 ```shell
 npx hardhat ttt-start --source-blockchain ethereumSepolia --sender <address of TicTacToe on Ethereum Sepolia> --destination-blockchain avalancheFuji --receiver <address of TicTacToe on Avalanche Fuji>
